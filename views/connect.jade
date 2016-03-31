@@ -1,0 +1,66 @@
+//
+   Created by iTooly on 3/31/2016.
+
+doctype html
+html
+    head
+        title #{title}
+        link(href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,500,900,700', rel='stylesheet', type='text/css')
+        link(rel='stylesheet', href='/bower_components/bootstrap/dist/css/bootstrap.min.css')
+        link(rel='stylesheet', href='/bower_components/material-design-iconic-font/css/material-design-iconic-font.min.css')
+        link(rel='stylesheet', href='/stylesheets/form.css')
+        link(rel='stylesheet', href='/stylesheets/style.css')
+    body
+        header#header.col-md-12.bgm-orange.aside
+            ul.header-inner
+                li.brand-logo
+                    a(href='/')
+                        h4 WISDome
+                li.pull-right
+                    ul.top-menu
+                        if (data.user)
+                            li
+                                a(href='')
+                                    h5 #{data.user.name}
+                        else
+                            li
+                                a(href='users/register')
+                                    h5 Sign Up
+                            li
+                                a(href='users/login')
+                                    h5 Sign In
+        aside#menu
+            nav
+                header
+                    a(href='../users/register')
+                        i.zmdi.zmdi-globe-alt
+                ul
+                    li
+                        a(href='./dashboard')
+                            div
+                                i.zmdi.zmdi-chart
+                    li
+                        a(href='./profile')
+                            div
+                                i.zmdi.zmdi-account-circle
+                    li
+                        a(href='./networks')
+                            div
+                                i.zmdi.zmdi-home
+                    li
+                        a(href='./weapons')
+                            div
+                                img(src='/images/Gun.png' width='24px' height='24px' style='margin-left: 8px; margin-top: -8px')
+                    li.bottom
+                        a(href='../settings')
+                            div
+                                i.zmdi.zmdi-settings
+    section#content
+        div.container
+            div.block-header
+                h2 User Undetected
+
+            div.row
+                div.col-md-8.center.col-md-offset-2
+                    //span.guns A B C D E F G H I J K L M N O P Q R S T U V W X Y Z 1 2 3 4 5 6 7 8 9
+                    h2 Oops! It seems like you are not connected to the service, Please login first.

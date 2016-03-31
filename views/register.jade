@@ -1,0 +1,74 @@
+//
+   Created by iTooly on 3/21/2016.
+
+doctype html
+html
+    head
+        title
+        link(href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,500,900,700', rel='stylesheet', type='text/css')
+        link(rel='stylesheet', href='/stylesheets/style.css')
+        link(rel='stylesheet', href='/bower_components/bootstrap/dist/css/bootstrap.min.css')
+        link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.2.0/css/material-design-iconic-font.min.css')
+        link(rel='stylesheet', href='/stylesheets/register.css')
+    body
+        header#header.col-md-12.bgm-orange
+            ul.header-inner
+                li.logo
+                    a(href='../')
+                        i.zmdi.zmdi-arrow-left
+                li.pull-right
+                    ul.top-menu
+                        li
+                            a(href='login')
+                                h5 Sign In
+        form#container(action='/users/register', method='post', role='form')
+            .inputbox
+                .face.front
+                    .name
+                    input(type='text', name='name', placeholder='full name', autocorrect='off')
+                    .submit
+                .face.top
+                    .email
+                    input(type='email', name='username', placeholder='email', autocorrect='off')
+                    .submit
+                .face.back
+                    .lock
+                    input(type='password', name='password', placeholder='password', autocorrect='off')
+                    .submit
+                .face.bottom
+                    .heart
+                    .text
+                        span thank you for joining
+                    .heart2
+        script(src='/bower_components/jquery/dist/jquery.min.js')
+        script(type='text/javascript').
+            function changeBottom() {
+                $("#container").css( "bottom", "150%" )
+            }
+            $(document).on("click", ".front .submit", function() {
+                $(".inputbox").css( "-webkit-transform", "rotateX(-90deg)" )
+                        .css( "animation-name", "wiggle1" )
+                        .css( "animation-duration", "1s" )
+                        .css( "animation-delay", ".22s" );
+            });
+            $(document).on("click", ".top .submit", function() {
+                $(".inputbox")
+                        .css( "-webkit-transform", "rotateX(-180deg)" )
+                        .css( "animation-name", "wiggle2" )
+                        .css( "animation-duration", "1s" )
+                        .css( "animation-delay", ".22s" );
+            });
+            $(document).on("click", ".back .submit", function() {
+                $(".inputbox")
+                        .css( "-webkit-transform", "rotateX(-270deg)" )
+                        .css( "animation-name", "wiggle3" )
+                        .css( "animation-duration", "1s" )
+                        .css( "animation-delay", ".22s" )
+                        .css( "animation-name", "slideout" )
+                        .css( "animation-speed", "0.7s" )
+                        .css( "animation-delay", "1.5s" );
+                setTimeout(function () {
+                    changeBottom();
+                    $("#container").submit();
+                }, 2000);
+            });

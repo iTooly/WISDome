@@ -1,0 +1,76 @@
+//
+   Created by iTooly on 3/22/2016.
+
+doctype html
+html
+    head
+        title #{title}
+        link(href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,500,900,700', rel='stylesheet', type='text/css')
+        link(rel='stylesheet', href='/bower_components/bootstrap/dist/css/bootstrap.min.css')
+        link(rel='stylesheet', href='bower_components/material-design-iconic-font/css/material-design-iconic-font.min.css')
+        link(rel='stylesheet', href='/stylesheets/style.css')
+    body
+        header#header.col-md-12.bgm-orange.aside
+            ul.header-inner
+                li.brand-logo
+                    a(href='/')
+                        h4 WISDome
+                li.pull-right
+                    ul.top-menu
+                        if (data.user)
+                            li
+                                a(href='')
+                                    h5 #{data.user.name}
+                        else
+                            li
+                                a(href='users/register')
+                                    h5 Sign Up
+                            li
+                                a(href='users/login')
+                                    h5 Sign In
+        aside#menu
+            nav
+                header
+                    a(href='')
+                        i.zmdi.zmdi-globe-alt
+                ul
+                    li
+                        a(href='dashboard')
+                            div
+                                i.zmdi.zmdi-chart
+                    li
+                        a(href='profile')
+                            div
+                                i.zmdi.zmdi-account-circle
+                    li
+                        a(href='networks')
+                            div
+                                i.zmdi.zmdi-home
+                    li.selected
+                        a(href='weapons')
+                            div
+                                img(src='/images/Gun_Selected.png' width='24px' height='24px' style='margin-left: 8px; margin-top: -8px')
+                    li.bottom
+                        a(href='settings')
+                            div
+                                i.zmdi.zmdi-settings
+
+        section#content
+            div.container
+                div.block-header
+                    h2 Weapons
+
+                    ul.actions
+                        li
+                            a(href='/weapons/new')
+                                i.zmdi.zmdi-plus
+
+                div.row
+                    each val, index in data.guns.length ? data.guns : []
+                        div.col-md-3.col-sm-6.square
+                            div.card.card-abs
+                                div.card-body.card-padding
+                                    span.guns.center-text #{val.type}
+
+                                div.card-header.card-header-bottom
+                                    h2 #{val.name}

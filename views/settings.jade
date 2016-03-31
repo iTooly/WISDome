@@ -1,0 +1,58 @@
+//
+   Created by iTooly on 3/22/2016.
+
+doctype html
+html
+    head
+        title
+        link(href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,500,900,700', rel='stylesheet', type='text/css')
+        link(rel='stylesheet', href='/stylesheets/style.css')
+        link(rel='stylesheet', href='/bower_components/bootstrap/dist/css/bootstrap.min.css')
+        link(rel='stylesheet', href='bower_components/material-design-iconic-font/css/material-design-iconic-font.min.css')
+        link(rel='stylesheet', href='/stylesheets/register.css')
+    body
+        header#header.col-md-12.bgm-orange.aside
+            ul.header-inner
+                li.brand-logo
+                    a(href='/')
+                        h4 WISDome
+                li.pull-right
+                    ul.top-menu
+                        if (user)
+                            li
+                                a(href='')
+                                    h5 #{user.name}
+                        else
+                            li
+                                a(href='users/register')
+                                    h5 Sign Up
+                            li
+                                a(href='users/login')
+                                    h5 Sign In
+        aside#menu
+            nav
+                header
+                    a(href='register.ejs')
+                        i.zmdi.zmdi-globe-alt
+                ul#content
+                    li
+                        a(href='dashboard')
+                            div
+                                i.zmdi.zmdi-chart
+                    li
+                        a(href='profile')
+                            div
+                                i.zmdi.zmdi-account-circle
+                    li
+                        a(href='networks')
+                            div
+                                i.zmdi.zmdi-home
+                    li
+                        a(href='weapons')
+                            div
+                                img(src='/images/Gun.png' width='24px' height='24px' style='margin-left: 8px; margin-top: -8px')
+                    li.bottom.selected
+                        a(href='settings')
+                            div
+                                i.zmdi.zmdi-settings
+

@@ -1,0 +1,109 @@
+//
+   Created by iTooly on 3/30/2016.
+doctype html
+html
+    head
+        title #{title}
+        link(href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,500,900,700', rel='stylesheet', type='text/css')
+        link(rel='stylesheet', href='/bower_components/bootstrap/dist/css/bootstrap.min.css')
+        link(rel='stylesheet', href='/bower_components/material-design-iconic-font/css/material-design-iconic-font.min.css')
+        link(rel='stylesheet', href='/stylesheets/form.css')
+        link(rel='stylesheet', href='/stylesheets/style.css')
+    body
+        header#header.col-md-12.bgm-orange.aside
+            ul.header-inner
+                li.brand-logo
+                    a(href='/')
+                        h4 WISDome
+                li.pull-right
+                    ul.top-menu
+                        if (data.user)
+                            li
+                                a(href='')
+                                    h5 #{data.user.name}
+                        else
+                            li
+                                a(href='users/register')
+                                    h5 Sign Up
+                            li
+                                a(href='users/login')
+                                    h5 Sign In
+        aside#menu
+            nav
+                header
+                    a(href='../users/register')
+                        i.zmdi.zmdi-globe-alt
+                ul
+                    li
+                        a(href='../dashboard')
+                            div
+                                i.zmdi.zmdi-chart
+                    li
+                        a(href='../profile')
+                            div
+                                i.zmdi.zmdi-account-circle
+                    li
+                        a(href='../networks')
+                            div
+                                i.zmdi.zmdi-home
+                    li.selected
+                        a(href='../weapons')
+                            div
+                                img(src='/images/Gun_Selected.png' width='24px' height='24px' style='margin-left: 8px; margin-top: -8px')
+                    li.bottom
+                        a(href='../settings')
+                            div
+                                i.zmdi.zmdi-settings
+    section#content
+        div.container
+            div.block-header
+                h2 Weapons - 
+                    span Register your weapon to the system, And add it to your networks.
+
+            div.row
+                div.col-md-12
+                    div.card
+                        div.card-header
+                            h2 Add a New Weapon
+
+                        div.card-body.card-padding
+                            form(method="post", action="/weapons/new")
+                                div.row
+                                    div.ui-input-group.col-md-6.col-sm-12
+                                        input.form-control(type='text', name='name')
+                                        span.input-bar
+                                        label Name
+                                div.row
+                                    div.ui-input-group.col-md-6.col-sm-12
+                                        select.form-control(name='type')
+                                            option
+                                            option(value='B') M-16
+                                            option(value='C') M-4
+                                            option(value='D') AK-47
+                                            option(value='F') Mini Uzi
+                                            option(value='Q') MAC11
+                                            option(value='R') M9
+                                            option(value='S') Dessert Eagle
+                                            option(value='T') M1911
+                                            option(value='Z') MP5
+                                        span.input-bar
+                                        label Type
+                                div.row
+                                    div.ui-input-group.text-center
+                                        button.btn.waves-effect(style='background-color:#FF9800;') Create
+
+script(src='/bower_components/jquery/dist/jquery.min.js')
+script.
+    $(document).ready(function() {
+
+    $('input, select, textarea').blur(function() {
+
+        // check if the input has any value (if we've typed into it)
+        if ($(this).val())
+            $(this).addClass('used');
+    else
+    $(this).removeClass('used');
+    });
+
+    Waves.init();
+    });

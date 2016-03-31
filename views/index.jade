@@ -1,0 +1,49 @@
+doctype html
+html
+  head
+    title
+    link(href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,500,900,700', rel='stylesheet', type='text/css')
+    link(rel='stylesheet', href='/stylesheets/style.css')
+    link(rel='stylesheet', href='/bower_components/bootstrap/dist/css/bootstrap.min.css')
+    link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.2.0/css/material-design-iconic-font.min.css')
+    link(rel='stylesheet', href='/stylesheets/register.css')
+  body
+    header#header.col-md-12.bgm-orange.aside
+      ul.header-inner
+        li.logo
+          a(href='../')
+            i.zmdi.zmdi-arrow-left
+        li.pull-right
+          ul.top-menu
+            li
+              a(href='users/register')
+                h5 Sign Up
+            li
+              a(href='users/login')
+                h5 Sign In
+    aside#menu
+      nav
+        header
+          a(href='register.ejs')
+            i.zmdi.zmdi-globe-alt
+        ul#content
+          li
+            a(href='#')
+              div
+                i.zmdi.zmdi-chart
+          li
+            a(href='#')
+              div
+                i.zmdi.zmdi-shield-security
+          li
+            a(href='#')
+              div
+                i.zmdi.zmdi-home
+          li
+            a(href='#')
+              div
+                i.zmdi.zmdi-account-circle
+          li.bottom
+            a(href='#')
+              div
+                i.zmdi.zmdi-settings

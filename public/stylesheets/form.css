@@ -1,0 +1,167 @@
+/*
+ * Input Feilds
+ */
+
+.fg-line {
+    position: relative;
+    vertical-align: top;
+}
+
+.fg-line:not(.form-group) {
+    display: inline-block;
+    width: 100%;
+}
+
+.fg-line .form-control:disabled {
+    color: #9d9d9d;
+    background: transparent;
+}
+
+.fg-line:not(.disabled):after,
+.fg-line:not(.readonly):after {
+    position: absolute;
+    z-index: 3;
+    bottom: 0;
+    left: 0;
+    height: 2px;
+    width: 0;
+    content: "";
+    -webkit-transition: all;
+    -o-transition: all;
+    transition: all;
+    -webkit-transition-duration: 300ms;
+    transition-duration: 300ms;
+}
+
+.fg-line:not([class*=has-]):after {
+    background: #2196f3;
+}
+
+.fg-line.readonly .form-control {
+    color: #9d9d9d;
+    background: transparent;
+}
+
+.fg-line.fg-toggled:after {
+    width: 100%;
+}
+
+.fg-float {
+    margin-top: 2px;
+    position: relative;
+}
+
+.fg-float .form-control {
+    position: relative;
+    background: transparent;
+    z-index: 1;
+}
+
+.fg-float .form-control::-moz-placeholder {
+    color: #ffffff;
+    opacity: 1;
+}
+
+.fg-float .form-control:-ms-input-placeholder {
+    color: #ffffff;
+}
+
+.fg-float .form-control::-webkit-input-placeholder {
+    color: #ffffff;
+}
+
+.fg-float .fg-label {
+    -webkit-transition: all;
+    -o-transition: all;
+    transition: all;
+    -webkit-transition-duration: 200ms;
+    transition-duration: 200ms;
+    position: absolute;
+    top: 5px;
+    font-weight: 400;
+    color: #959595;
+    pointer-events: none;
+    z-index: 0;
+    left: 0;
+    white-space: nowrap;
+}
+
+.fg-float .fg-toggled .fg-label {
+    top: -20px;
+    font-size: 11px;
+}
+
+.control-label {
+    font-weight: normal;
+}
+
+.form-control {
+    color: #FFFFFF;
+}
+
+.ui-input-group {
+    position: relative;
+    margin: 28px 0 12px; }
+.ui-input-group .form-control {
+    background-color: transparent;
+    box-shadow: none; }
+.ui-input-group .form-control:focus {
+    border-color: #ff5722; }
+.ui-input-group > input,
+.ui-input-group > select,
+.ui-input-group > textarea {padding-left: 0;
+    padding-right: 0;
+    border: none;
+    border-bottom: 1px solid #ccc;
+    border-radius: 0;
+}
+.ui-input-group > input:focus,
+.ui-input-group > select:focus,
+.ui-input-group > textarea:focus {
+    outline: none; }
+.ui-input-group > input:focus ~ label,
+.ui-input-group > select:focus ~ label,
+.ui-input-group > textarea:focus ~ label,
+.ui-input-group > .used ~ label {
+    top: -20px;
+    left: 10px;
+    font-size: 12px; }
+.ui-input-group > input:focus ~ label,
+.ui-input-group > select:focus ~ label,
+.ui-input-group > textarea:focus ~ label {
+    color: #ff5722; }
+.ui-input-group > input:focus ~ .input-bar:before,
+.ui-input-group > input:focus ~ .input-bar:after,
+.ui-input-group > select:focus ~ .input-bar:before,
+.ui-input-group > select:focus ~ .input-bar:after,
+.ui-input-group > textarea:focus ~ .input-bar:before,
+.ui-input-group > textarea:focus ~ .input-bar:after {
+    width: 50%; }
+.ui-input-group > label {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 14px;
+    font-weight: normal;
+    position: absolute;
+    pointer-events: none;
+    top: 0;
+    transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1); }
+.ui-input-group .input-bar {
+    position: relative;
+    display: block;
+    width: 100%; }
+.ui-input-group .input-bar:before,
+.ui-input-group .input-bar:after {
+    content: '';
+    height: 1px;
+    width: 0;
+    bottom: 1px;
+    position: absolute;
+    background: #ff5722;
+    transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1); }
+.ui-input-group .input-bar:before {left: 50%;}
+.ui-input-group .input-bar:after {
+    right: 50%; }
+
+option {
+    color: #333333;
+}

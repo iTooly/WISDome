@@ -1,0 +1,222 @@
+* {
+    -webkit-tap-highlight-color: transparent;
+    -moz-tap-highlight-color: transparent;
+}
+
+input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0 1000px white inset;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    overflow-y: hidden;
+    background: #303030;
+    font-family: 'Open Sans', sans-serif;
+}
+
+#container {
+    width: 100%;
+    height: 70px;
+    max-width: 400px;
+    margin: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    -webkit-perspective: 800;
+    -webkit-perspective-origin: 50% 70px;
+    -moz-perspective: 800;
+    -moz-perspective-origin: 50% 70px;
+    animation-name: slidein;
+    animation-duration: 1s;
+}
+
+.inputbox {
+    margin: auto;
+    width: 100%;
+    height: 70px;
+    max-width: 400px;
+    -webkit-transition: -webkit-transform .5s linear;
+    -webkit-transform-style: preserve-3d;
+    -moz-transition: -moz-transform .5s linear;
+    -moz-transform-style: preserve-3d;
+    transition: -webkit-transform 0.4s;
+}
+.inputbox .face {
+    position: absolute;
+    width: 100%;
+    height: 70px;
+    max-width: 400px;
+    padding: 0px;
+    font-size: 27px;
+    line-height: 1em;
+    color: #fff;
+}
+.inputbox .front {
+    -webkit-transform: translateZ(35px);
+    -moz-transform: translateZ(35px);
+    background-color: #fff;
+}
+.inputbox .front .email:before {
+    float: left;
+    font-family: 'Material-Design-Iconic-Font';
+    content: '\f15a';
+    line-height: 70px;
+    font-size: 24px;
+    color: #242A37;
+    padding: 0 20px;
+}
+.inputbox .top {
+    -webkit-transform: rotateX(90deg) translateZ(35px);
+    -moz-transform: rotateX(90deg) translateZ(35px);
+    background-color: #fff;
+}
+.inputbox .top .lock:before {
+    float: left;
+    font-family: 'Material-Design-Iconic-Font';
+    content: '\f191';
+    line-height: 70px;
+    font-size: 24px;
+    color: #242A37;
+    padding: 0 20px;
+}
+.inputbox .back {
+    -webkit-transform: rotateX(180deg) translateZ(35px);
+    -moz-transform: rotateX(180deg) translateZ(35px);
+    background-color: #fff;
+}
+.inputbox .bottom {
+    -webkit-transform: rotateX(-90deg) translateZ(35px);
+    -moz-transform: rotateX(-90deg) translateZ(35px);
+    background-color: #fff;
+}
+.inputbox .back .heart:before {
+    float: left;
+    font-family: 'Material-Design-Iconic-Font';
+    content: '\f15e';
+    line-height: 70px;
+    font-size: 24px;
+    color: #242A37;
+    padding: 0 20px;
+}
+.inputbox .back .heart2:before {
+    float: right;
+    font-family: 'Material-Design-Iconic-Font';
+    content: '\f15e';
+    line-height: 70px;
+    font-size: 24px;
+    color: #242A37;
+    padding: 0 20px;
+}
+.inputbox .back .text {
+    float: left;
+    color: #242A37;
+    background: #fff;
+    font-size: 15px;
+    line-height: 68px;
+    text-align: center;
+    letter-spacing: 4.2px;
+    text-transform: uppercase;
+}
+.inputbox .back .text span {
+    position: absolute;
+    left: 50%;
+    width: 100%;
+    transform: translateX(-50%);
+}
+.inputbox .submit:before {
+    float: right;
+    font-family: 'Material-Design-Iconic-Font';
+    content: '\f2f9';
+    line-height: 70px;
+    font-size: 24px;
+    color: #dcdee0;
+    padding: 0 20px;
+    overflow: hidden;
+}
+.inputbox .submit:hover:before {
+    color: #242A37;
+    cursor: pointer;
+}
+.inputbox input {
+    float: left;
+    border: 0;
+    outline: 0;
+    width: 60%;
+    color: #242A37;
+    background: #fff;
+    height: 68px;
+    font-size: 15px;
+    letter-spacing: 4.2px;
+    text-transform: uppercase;
+}
+.inputbox input::-webkit-input-placeholder {
+    color: #dcdee0;
+}
+.inputbox input:-moz-placeholder {
+    color: #dcdee0;
+}
+.inputbox input::-moz-placeholder {
+    color: #dcdee0;
+}
+.inputbox input:-ms-input-placeholder {
+    color: #dcdee0;
+}
+
+@keyframes slidein {
+    0% {
+        top: 100%;
+    }
+    50% {
+        top: -25px;
+    }
+    100% {
+        top: 0px;
+    }
+}
+@keyframes slideout {
+    0% {
+        bottom: 0;
+    }
+    50% {
+        bottom: -35px;
+    }
+    100% {
+        bottom: 110%;
+    }
+}
+@keyframes wiggle1 {
+    0% {
+        -webkit-transform: rotateX(-90deg);
+    }
+    50% {
+        -webkit-transform: rotateX(-100deg);
+    }
+    0% {
+        -webkit-transform: rotateX(-90deg);
+    }
+}
+@keyframes wiggle2 {
+    0% {
+        -webkit-transform: rotateX(-180deg);
+    }
+    50% {
+        -webkit-transform: rotateX(-190deg);
+    }
+    0% {
+        -webkit-transform: rotateX(-180deg);
+    }
+}
+@keyframes wiggle3 {
+    0% {
+        -webkit-transform: rotateX(-270deg);
+    }
+    50% {
+        -webkit-transform: rotateX(-280deg);
+    }
+    0% {
+        -webkit-transform: rotateX(-270deg);
+    }
+}
